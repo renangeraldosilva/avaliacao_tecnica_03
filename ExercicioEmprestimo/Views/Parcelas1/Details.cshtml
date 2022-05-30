@@ -1,0 +1,42 @@
+﻿@model ExercicioEmprestimo.Models.Parcelas
+
+@{
+    ViewData["Title"] = "Parcelas";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Parcelas</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Emprestimo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emprestimo.Dscricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorParcelas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValorParcelas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Paga)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Paga)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataVencimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataVencimento)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="Index"  class="btn btn-secondary">Voltar</a>
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ExercicioEmprestimo.Models.Parcelas>
+
+@{
+    ViewData["Title"] = "Parcelas";
+}
+
+<h1>Parcelas</h1>
+
+<p>
+ 
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Emprestimo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorParcelas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataVencimento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emprestimo.Dscricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorParcelas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataVencimento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalhes</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
